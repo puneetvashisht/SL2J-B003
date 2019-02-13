@@ -3,23 +3,20 @@ import java.util.List;
 
 public class BasicThreadDemo {
 	
+	public static int add(Integer x, Integer y){
+		return x+y;
+	}
+	
 	public static void main(String[] args) throws InterruptedException {
 		
 		List<Thread> threads = new ArrayList<>();
 		
+//		threads.add(e)
+		int result = add(4,5);
+		System.out.println(result);
+		
 		for(int i=0;i<5;i++){
-			Thread t = new Thread(new Runnable(){
-				@Override
-				public void run() {
-					try {
-						Thread.sleep(5000);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					System.out.println("New Thread: " + Thread.currentThread().getName());	
-				}	
-			});
+			Thread t = new Thread(new MyRunnable());
 			
 			t.start();
 //			t.join();
