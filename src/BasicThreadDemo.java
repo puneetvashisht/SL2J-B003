@@ -9,6 +9,10 @@ public class BasicThreadDemo {
 	
 	public static void main(String[] args) throws InterruptedException {
 		
+//		List<Employee> employee = new ArrayList<>();
+//		employee.inrementSalary();
+		// implement increment salary as a parallel process using threads.
+		
 		List<Thread> threads = new ArrayList<>();
 		
 //		threads.add(e)
