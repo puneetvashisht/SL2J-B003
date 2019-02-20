@@ -3,9 +3,9 @@ package com.cts;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.Future;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
@@ -32,8 +32,15 @@ public class ConcurrencyDemo {
 		employees.add(e1); employees.add(e2); employees.add(e3);
 		employees.add(e4); employees.add(e5); employees.add(e6);	
 		for(Employee e : employees){
-			IncrementTask task = new IncrementTask(e);
-			service.submit(task);
+			IncrementCallable task = new IncrementCallable(e);
+			Future<Double> future = service.submit(task);
+			try {
+				Double incrementedSalary = future.get();
+				System.out.println("Salary incremented is:  " + incrementedSalary);
+			} catch (InterruptedException | ExecutionException e7) {
+				// TODO Auto-generated catch block
+				e7.printStackTrace();
+			}
 		}
 		
 
