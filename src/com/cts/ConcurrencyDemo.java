@@ -41,6 +41,13 @@ public class ConcurrencyDemo {
 				// TODO Auto-generated catch block
 				e7.printStackTrace();
 			}
+			
+			// Future.get is blocking method, results in sequential execution of threads 
+//			and slows down whole execution. We still want parallel execution.
+//			It is possible if we dont call .get() method and rather store future objects in
+//			a list and then fire .get() method. Or even better use CompletionService.
+			
+			
 		}
 		
 

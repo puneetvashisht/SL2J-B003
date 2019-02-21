@@ -1,8 +1,8 @@
 package com.cts;
 
-public class Employee {
+public class Employee implements Comparable<Employee>{
 
-	int id;
+	Integer id;
 	String name;
 	double salary;
 	
@@ -18,6 +18,28 @@ public class Employee {
 	}
 	
 	
+	
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + id;
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Employee other = (Employee) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	}
 	public synchronized void incrementSalary(int incrementAmount){
 		this.salary += incrementAmount;
 		try {
@@ -50,6 +72,14 @@ public class Employee {
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + "]";
+	}
+	@Override
+	public int compareTo(Employee o) {
+		if(this.id == o.id){
+			return this.name.compareTo(o.name);
+		}
+		return this.id.compareTo(o.id);
+		
 	}
 	
 	
