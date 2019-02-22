@@ -4,7 +4,7 @@ public class Employee implements Comparable<Employee>{
 
 	Integer id;
 	String name;
-	double salary;
+	Double salary;
 	
 	
 	public Employee() {
@@ -63,10 +63,11 @@ public class Employee implements Comparable<Employee>{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public double getSalary() {
+	
+	public Double getSalary() {
 		return salary;
 	}
-	public void setSalary(double salary) {
+	public void setSalary(Double salary) {
 		this.salary = salary;
 	}
 	@Override
