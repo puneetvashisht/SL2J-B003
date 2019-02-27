@@ -28,7 +28,7 @@ public class PaymentService {
 	public boolean transferFunds(int acc1, int acc2, double amount){
 		
 		
-		
+		accountRepo.getBalance(23);
 		
 		System.out.println(acc1);
 		System.out.println(acc2);
