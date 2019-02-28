@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 import springbasic.repos.AccountRepo;
 
-@Component
+//@Component
 public class MyBeanPostProcessor implements BeanPostProcessor{
 
 	public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException{

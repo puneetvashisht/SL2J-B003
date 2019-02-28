@@ -14,7 +14,7 @@ public class AccountRepo {
 	
 	public double getBalance(int acc1){
 		//db code to get balance
-		
+		System.out.println("Account Number in AccountRepo: " + acc1);
 		return 34343.34;
 	}
 

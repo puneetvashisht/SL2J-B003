@@ -30,9 +30,9 @@ public class PaymentService {
 		
 		accountRepo.getBalance(23);
 		
-		System.out.println(acc1);
-		System.out.println(acc2);
-		System.out.println(amount);
+//		System.out.println(acc1);
+//		System.out.println(acc2);
+//		System.out.println(amount);
 		
 		
 		return true;
