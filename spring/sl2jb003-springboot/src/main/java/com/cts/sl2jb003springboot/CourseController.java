@@ -7,6 +7,7 @@ import javax.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,7 @@ import com.cts.sl2jb003springboot.entities.Course;
 import com.cts.sl2jb003springboot.repos.CoursesRepo;
 
 @RestController
+@CrossOrigin("*")
 public class CourseController {
 	
 	@Autowired
@@ -38,7 +40,7 @@ public class CourseController {
 			System.out.println("Catch the non existing object call here....");
 			throw new CourseNotFoundException("Course not found with id: "+ id);
 		}
-		
+	
 		return course;
 		
 	}
